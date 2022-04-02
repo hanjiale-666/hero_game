@@ -1,4 +1,4 @@
-package org.hero.story;
+package org.hero.model;
 
 /**
  * @ClassName User
