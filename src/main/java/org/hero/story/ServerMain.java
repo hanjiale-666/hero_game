@@ -10,6 +10,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
+import org.hero.handler.CmdHandlerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +34,8 @@ public class ServerMain {
      * @param args
      */
     public static void main(String[] args) {
+        //初始化指令处理器字典
+        CmdHandlerFactory.init();
         //netty代码
         //负责处理客户端连接，有连接建立channel
         EventLoopGroup bossGroup = new NioEventLoopGroup();

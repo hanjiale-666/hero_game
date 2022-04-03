@@ -4,10 +4,7 @@ import com.google.protobuf.GeneratedMessageV3;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.AttributeKey;
-import org.hero.handler.ICmdHandler;
-import org.hero.handler.UserEntryCmdHandler;
-import org.hero.handler.UserMoveToCmdHandler;
-import org.hero.handler.WhoElseIsHereCmdHandler;
+import org.hero.handler.*;
 import org.hero.model.User;
 import org.hero.model.UserManager;
 import org.hero.msg.GameMsgProtocol;
@@ -64,37 +61,13 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("收到客户端消息，msgClazz = " + msg.getClass().getName() + ",msg = " + msg);
-
-        ICmdHandler<? extends GeneratedMessageV3> cmdHandler = null;
         //构建消息对象，并且进行广播群发
-        if (msg instanceof GameMsgProtocol.UserEntryCmd) {
-            cmdHandler = new UserEntryCmdHandler();
-        } else if (msg instanceof GameMsgProtocol.WhoElseIsHereCmd) {
-            cmdHandler = new WhoElseIsHereCmdHandler();
-        } else if (msg instanceof GameMsgProtocol.UserMoveToCmd) {
-            cmdHandler = new UserMoveToCmdHandler();
-        }
+        ICmdHandler<? extends GeneratedMessageV3> cmdHandler = CmdHandlerFactory.create(msg.getClass());
 
+        //由多态处理，将指令交给对应的处理器处理
         if (cmdHandler != null){
             cmdHandler.handle(ctx,cast(msg));
         }
-
-        //下面的代码是添加解码器之前，获取的是二进制的消息，所以有如下转换，在添加解码器后，消息已经被转换为protocol协议的消息了
-        /*//收到的消息是二进制的，需要解码器
-        BinaryWebSocketFrame frame = (BinaryWebSocketFrame)msg;
-        ByteBuf byteBuf = frame.content();
-
-        //byteBuf.readableBytes()获取字节数组的数量
-        byte[]  byteArray = new byte[byteBuf.readableBytes()];
-        //将byteBuf中的数据写入到字节数组中
-        byteBuf.readBytes(byteArray);
-
-        System.out.println("收到的字节 = ");
-
-        for (byte b : byteArray){
-            System.out.print(b);
-            System.out.print(",");
-        }*/
     }
 
     /**
