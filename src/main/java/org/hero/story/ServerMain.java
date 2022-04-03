@@ -36,6 +36,8 @@ public class ServerMain {
     public static void main(String[] args) {
         //初始化指令处理器字典
         CmdHandlerFactory.init();
+        //初始化消息识别器
+        GameMsgRecognizer.init();
         //netty代码
         //负责处理客户端连接，有连接建立channel
         EventLoopGroup bossGroup = new NioEventLoopGroup();

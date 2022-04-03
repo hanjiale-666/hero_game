@@ -1,10 +1,12 @@
 package org.hero.story;
 
 import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.Message;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
+import lombok.extern.slf4j.Slf4j;
 import org.hero.msg.GameMsgProtocol;
 
 /**
@@ -14,6 +16,7 @@ import org.hero.msg.GameMsgProtocol;
  * @Date 2022/3/29 9:24
  * @Version 1.0
  */
+@Slf4j
 public class GameMsgDecoder extends ChannelInboundHandlerAdapter {
 
     @Override
@@ -31,30 +34,25 @@ public class GameMsgDecoder extends ChannelInboundHandlerAdapter {
         //读取消息的编号
         int msgCode = byteBuf.readShort();
 
+        //获取消息的构建者
+        Message.Builder msgBuilder = GameMsgRecognizer.getBuilderByMsgCode(msgCode);
+        if (msgBuilder == null){
+            log.error("无法识别的消息类型，msgCode = {}",msgCode);
+            return;
+        }
+
         //获取消息体
         byte[]  msgBody = new byte[byteBuf.readableBytes()];
         //将byteBuf中的数据写入到字节数组中
         byteBuf.readBytes(msgBody);
 
-        //protocol消息的基类
-        GeneratedMessageV3 message = null;
-        switch (msgCode){
-            //客户端发送当前登录用户
-            case GameMsgProtocol.MsgCode.USER_ENTRY_CMD_VALUE:
-                message = GameMsgProtocol.UserEntryCmd.parseFrom(msgBody);
-                break;
-            //客户端发送获取当前服务器登录的所有用户的指令
-            case GameMsgProtocol.MsgCode.WHO_ELSE_IS_HERE_CMD_VALUE:
-                message = GameMsgProtocol.WhoElseIsHereCmd.parseFrom(msgBody);
-                break;
-            //客户端发送的是登录用户的移动指令
-            case GameMsgProtocol.MsgCode.USER_MOVE_TO_CMD_VALUE:
-                message = GameMsgProtocol.UserMoveToCmd.parseFrom(msgBody);
-                break;
-        }
+        msgBuilder.clear();
+        //将消息合并起来
+        msgBuilder.mergeFrom(msgBody);
+        Message newMsg = msgBuilder.build();
 
-        if (message != null){
-            ctx.fireChannelRead(message);
+        if (newMsg != null){
+            ctx.fireChannelRead(newMsg);
         }
     }
 }
