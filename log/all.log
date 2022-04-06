@@ -64,3 +64,126 @@
 [15:58:23,158] [INFO] GameMsgRecognizer.init --> 1 <====> org.hero.msg.GameMsgProtocol$UserEntryResult
 [15:58:23,529] [INFO] GameMsgRecognizer.init --> 0 <====> org.hero.msg.GameMsgProtocol$UserEntryCmd
 [15:58:25,041] [INFO] ServerMain.main --> 服务器启动成功
+[16:27:08,798] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd <=======> org.hero.handler.WhoElseIsHereCmdHandler
+[16:27:08,807] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserEntryCmd <=======> org.hero.handler.UserEntryCmdHandler
+[16:27:08,815] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserAttkCmd <=======> org.hero.handler.UserAttkCmdHandler
+[16:27:08,822] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserMoveToCmd <=======> org.hero.handler.UserMoveToCmdHandler
+[16:27:08,916] [INFO] GameMsgRecognizer.init --> 16 <====> org.hero.msg.GameMsgProtocol$SelectHeroResult
+[16:27:08,936] [INFO] GameMsgRecognizer.init --> 15 <====> org.hero.msg.GameMsgProtocol$SelectHeroCmd
+[16:27:08,947] [INFO] GameMsgRecognizer.init --> 14 <====> org.hero.msg.GameMsgProtocol$UserLoginResult
+[16:27:08,955] [INFO] GameMsgRecognizer.init --> 13 <====> org.hero.msg.GameMsgProtocol$UserLoginCmd
+[16:27:08,962] [INFO] GameMsgRecognizer.init --> 12 <====> org.hero.msg.GameMsgProtocol$UserDieResult
+[16:27:08,968] [INFO] GameMsgRecognizer.init --> 11 <====> org.hero.msg.GameMsgProtocol$UserSubtractHpResult
+[16:27:08,975] [INFO] GameMsgRecognizer.init --> 10 <====> org.hero.msg.GameMsgProtocol$UserAttkResult
+[16:27:08,981] [INFO] GameMsgRecognizer.init --> 9 <====> org.hero.msg.GameMsgProtocol$UserAttkCmd
+[16:27:08,989] [INFO] GameMsgRecognizer.init --> 8 <====> org.hero.msg.GameMsgProtocol$UserStopResult
+[16:27:08,999] [INFO] GameMsgRecognizer.init --> 7 <====> org.hero.msg.GameMsgProtocol$UserStopCmd
+[16:27:09,006] [INFO] GameMsgRecognizer.init --> 6 <====> org.hero.msg.GameMsgProtocol$UserQuitResult
+[16:27:09,013] [INFO] GameMsgRecognizer.init --> 5 <====> org.hero.msg.GameMsgProtocol$UserMoveToResult
+[16:27:09,020] [INFO] GameMsgRecognizer.init --> 4 <====> org.hero.msg.GameMsgProtocol$UserMoveToCmd
+[16:27:09,030] [INFO] GameMsgRecognizer.init --> 3 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereResult
+[16:27:09,045] [INFO] GameMsgRecognizer.init --> 2 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd
+[16:27:09,052] [INFO] GameMsgRecognizer.init --> 1 <====> org.hero.msg.GameMsgProtocol$UserEntryResult
+[16:27:09,059] [INFO] GameMsgRecognizer.init --> 0 <====> org.hero.msg.GameMsgProtocol$UserEntryCmd
+[16:27:09,950] [INFO] ServerMain.main --> 服务器启动成功
+[17:15:20,002] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd <=======> org.hero.handler.WhoElseIsHereCmdHandler
+[17:15:20,015] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserEntryCmd <=======> org.hero.handler.UserEntryCmdHandler
+[17:15:20,022] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserAttkCmd <=======> org.hero.handler.UserAttkCmdHandler
+[17:15:20,033] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserMoveToCmd <=======> org.hero.handler.UserMoveToCmdHandler
+[17:15:20,150] [INFO] GameMsgRecognizer.init --> 12 <====> org.hero.msg.GameMsgProtocol$UserDieResult
+[17:15:20,185] [INFO] GameMsgRecognizer.init --> 11 <====> org.hero.msg.GameMsgProtocol$UserSubtractHpResult
+[17:15:20,202] [INFO] GameMsgRecognizer.init --> 10 <====> org.hero.msg.GameMsgProtocol$UserAttkResult
+[17:15:20,221] [INFO] GameMsgRecognizer.init --> 9 <====> org.hero.msg.GameMsgProtocol$UserAttkCmd
+[17:15:20,235] [INFO] GameMsgRecognizer.init --> 8 <====> org.hero.msg.GameMsgProtocol$UserStopResult
+[17:15:20,251] [INFO] GameMsgRecognizer.init --> 7 <====> org.hero.msg.GameMsgProtocol$UserStopCmd
+[17:15:20,264] [INFO] GameMsgRecognizer.init --> 6 <====> org.hero.msg.GameMsgProtocol$UserQuitResult
+[17:15:20,278] [INFO] GameMsgRecognizer.init --> 5 <====> org.hero.msg.GameMsgProtocol$UserMoveToResult
+[17:15:20,292] [INFO] GameMsgRecognizer.init --> 4 <====> org.hero.msg.GameMsgProtocol$UserMoveToCmd
+[17:15:20,305] [INFO] GameMsgRecognizer.init --> 3 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereResult
+[17:15:20,334] [INFO] GameMsgRecognizer.init --> 2 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd
+[17:15:20,346] [INFO] GameMsgRecognizer.init --> 1 <====> org.hero.msg.GameMsgProtocol$UserEntryResult
+[17:15:20,354] [INFO] GameMsgRecognizer.init --> 0 <====> org.hero.msg.GameMsgProtocol$UserEntryCmd
+[17:15:22,114] [INFO] ServerMain.main --> 服务器启动成功
+[19:49:23,003] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd <=======> org.hero.handler.WhoElseIsHereCmdHandler
+[19:49:23,007] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserEntryCmd <=======> org.hero.handler.UserEntryCmdHandler
+[19:49:23,009] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserAttkCmd <=======> org.hero.handler.UserAttkCmdHandler
+[19:49:23,010] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserMoveToCmd <=======> org.hero.handler.UserMoveToCmdHandler
+[19:49:23,020] [INFO] GameMsgRecognizer.init --> 12 <====> org.hero.msg.GameMsgProtocol$UserDieResult
+[19:49:23,036] [INFO] GameMsgRecognizer.init --> 11 <====> org.hero.msg.GameMsgProtocol$UserSubtractHpResult
+[19:49:23,039] [INFO] GameMsgRecognizer.init --> 10 <====> org.hero.msg.GameMsgProtocol$UserAttkResult
+[19:49:23,041] [INFO] GameMsgRecognizer.init --> 9 <====> org.hero.msg.GameMsgProtocol$UserAttkCmd
+[19:49:23,042] [INFO] GameMsgRecognizer.init --> 8 <====> org.hero.msg.GameMsgProtocol$UserStopResult
+[19:49:23,045] [INFO] GameMsgRecognizer.init --> 7 <====> org.hero.msg.GameMsgProtocol$UserStopCmd
+[19:49:23,046] [INFO] GameMsgRecognizer.init --> 6 <====> org.hero.msg.GameMsgProtocol$UserQuitResult
+[19:49:23,048] [INFO] GameMsgRecognizer.init --> 5 <====> org.hero.msg.GameMsgProtocol$UserMoveToResult
+[19:49:23,050] [INFO] GameMsgRecognizer.init --> 4 <====> org.hero.msg.GameMsgProtocol$UserMoveToCmd
+[19:49:23,051] [INFO] GameMsgRecognizer.init --> 3 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereResult
+[19:49:23,054] [INFO] GameMsgRecognizer.init --> 2 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd
+[19:49:23,055] [INFO] GameMsgRecognizer.init --> 1 <====> org.hero.msg.GameMsgProtocol$UserEntryResult
+[19:49:23,057] [INFO] GameMsgRecognizer.init --> 0 <====> org.hero.msg.GameMsgProtocol$UserEntryCmd
+[19:49:23,942] [INFO] ServerMain.main --> 服务器启动成功
+[20:08:59,465] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd <=======> org.hero.handler.WhoElseIsHereCmdHandler
+[20:08:59,468] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserEntryCmd <=======> org.hero.handler.UserEntryCmdHandler
+[20:08:59,469] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserAttkCmd <=======> org.hero.handler.UserAttkCmdHandler
+[20:08:59,470] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserMoveToCmd <=======> org.hero.handler.UserMoveToCmdHandler
+[20:08:59,484] [INFO] GameMsgRecognizer.init --> 12 <====> org.hero.msg.GameMsgProtocol$UserDieResult
+[20:08:59,503] [INFO] GameMsgRecognizer.init --> 11 <====> org.hero.msg.GameMsgProtocol$UserSubtractHpResult
+[20:08:59,507] [INFO] GameMsgRecognizer.init --> 10 <====> org.hero.msg.GameMsgProtocol$UserAttkResult
+[20:08:59,508] [INFO] GameMsgRecognizer.init --> 9 <====> org.hero.msg.GameMsgProtocol$UserAttkCmd
+[20:08:59,510] [INFO] GameMsgRecognizer.init --> 8 <====> org.hero.msg.GameMsgProtocol$UserStopResult
+[20:08:59,511] [INFO] GameMsgRecognizer.init --> 7 <====> org.hero.msg.GameMsgProtocol$UserStopCmd
+[20:08:59,513] [INFO] GameMsgRecognizer.init --> 6 <====> org.hero.msg.GameMsgProtocol$UserQuitResult
+[20:08:59,514] [INFO] GameMsgRecognizer.init --> 5 <====> org.hero.msg.GameMsgProtocol$UserMoveToResult
+[20:08:59,516] [INFO] GameMsgRecognizer.init --> 4 <====> org.hero.msg.GameMsgProtocol$UserMoveToCmd
+[20:08:59,517] [INFO] GameMsgRecognizer.init --> 3 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereResult
+[20:08:59,519] [INFO] GameMsgRecognizer.init --> 2 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd
+[20:08:59,521] [INFO] GameMsgRecognizer.init --> 1 <====> org.hero.msg.GameMsgProtocol$UserEntryResult
+[20:08:59,524] [INFO] GameMsgRecognizer.init --> 0 <====> org.hero.msg.GameMsgProtocol$UserEntryCmd
+[20:09:00,468] [INFO] ServerMain.main --> 服务器启动成功
+[20:11:24,316] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd <=======> org.hero.handler.WhoElseIsHereCmdHandler
+[20:11:24,320] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserEntryCmd <=======> org.hero.handler.UserEntryCmdHandler
+[20:11:24,321] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserAttkCmd <=======> org.hero.handler.UserAttkCmdHandler
+[20:11:24,323] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserMoveToCmd <=======> org.hero.handler.UserMoveToCmdHandler
+[20:11:24,333] [INFO] GameMsgRecognizer.init --> 12 <====> org.hero.msg.GameMsgProtocol$UserDieResult
+[20:11:24,349] [INFO] GameMsgRecognizer.init --> 11 <====> org.hero.msg.GameMsgProtocol$UserSubtractHpResult
+[20:11:24,352] [INFO] GameMsgRecognizer.init --> 10 <====> org.hero.msg.GameMsgProtocol$UserAttkResult
+[20:11:24,354] [INFO] GameMsgRecognizer.init --> 9 <====> org.hero.msg.GameMsgProtocol$UserAttkCmd
+[20:11:24,355] [INFO] GameMsgRecognizer.init --> 8 <====> org.hero.msg.GameMsgProtocol$UserStopResult
+[20:11:24,357] [INFO] GameMsgRecognizer.init --> 7 <====> org.hero.msg.GameMsgProtocol$UserStopCmd
+[20:11:24,358] [INFO] GameMsgRecognizer.init --> 6 <====> org.hero.msg.GameMsgProtocol$UserQuitResult
+[20:11:24,360] [INFO] GameMsgRecognizer.init --> 5 <====> org.hero.msg.GameMsgProtocol$UserMoveToResult
+[20:11:24,361] [INFO] GameMsgRecognizer.init --> 4 <====> org.hero.msg.GameMsgProtocol$UserMoveToCmd
+[20:11:24,362] [INFO] GameMsgRecognizer.init --> 3 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereResult
+[20:11:24,364] [INFO] GameMsgRecognizer.init --> 2 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd
+[20:11:24,366] [INFO] GameMsgRecognizer.init --> 1 <====> org.hero.msg.GameMsgProtocol$UserEntryResult
+[20:11:24,368] [INFO] GameMsgRecognizer.init --> 0 <====> org.hero.msg.GameMsgProtocol$UserEntryCmd
+[20:11:25,213] [INFO] ServerMain.main --> 服务器启动成功
+[20:14:05,355] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd <=======> org.hero.handler.WhoElseIsHereCmdHandler
+[20:14:05,358] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserEntryCmd <=======> org.hero.handler.UserEntryCmdHandler
+[20:14:05,358] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserAttkCmd <=======> org.hero.handler.UserAttkCmdHandler
+[20:14:05,359] [INFO] CmdHandlerFactory.init --> org.hero.msg.GameMsgProtocol$UserMoveToCmd <=======> org.hero.handler.UserMoveToCmdHandler
+[20:14:05,368] [INFO] GameMsgRecognizer.init --> 12 <====> org.hero.msg.GameMsgProtocol$UserDieResult
+[20:14:05,384] [INFO] GameMsgRecognizer.init --> 11 <====> org.hero.msg.GameMsgProtocol$UserSubtractHpResult
+[20:14:05,388] [INFO] GameMsgRecognizer.init --> 10 <====> org.hero.msg.GameMsgProtocol$UserAttkResult
+[20:14:05,389] [INFO] GameMsgRecognizer.init --> 9 <====> org.hero.msg.GameMsgProtocol$UserAttkCmd
+[20:14:05,390] [INFO] GameMsgRecognizer.init --> 8 <====> org.hero.msg.GameMsgProtocol$UserStopResult
+[20:14:05,392] [INFO] GameMsgRecognizer.init --> 7 <====> org.hero.msg.GameMsgProtocol$UserStopCmd
+[20:14:05,393] [INFO] GameMsgRecognizer.init --> 6 <====> org.hero.msg.GameMsgProtocol$UserQuitResult
+[20:14:05,394] [INFO] GameMsgRecognizer.init --> 5 <====> org.hero.msg.GameMsgProtocol$UserMoveToResult
+[20:14:05,396] [INFO] GameMsgRecognizer.init --> 4 <====> org.hero.msg.GameMsgProtocol$UserMoveToCmd
+[20:14:05,397] [INFO] GameMsgRecognizer.init --> 3 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereResult
+[20:14:05,399] [INFO] GameMsgRecognizer.init --> 2 <====> org.hero.msg.GameMsgProtocol$WhoElseIsHereCmd
+[20:14:05,400] [INFO] GameMsgRecognizer.init --> 1 <====> org.hero.msg.GameMsgProtocol$UserEntryResult
+[20:14:05,403] [INFO] GameMsgRecognizer.init --> 0 <====> org.hero.msg.GameMsgProtocol$UserEntryCmd
+[20:14:06,251] [INFO] ServerMain.main --> 服务器启动成功
+[20:14:48,350] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-5，当前用户的血量 = 100
+[20:15:26,566] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-4，当前用户的血量 = 100
+[20:15:27,551] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-5，当前用户的血量 = 90
+[20:15:28,395] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-4，当前用户的血量 = 80
+[20:15:28,865] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-5，当前用户的血量 = 70
+[20:15:29,308] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-4，当前用户的血量 = 60
+[20:15:29,713] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-5，当前用户的血量 = 50
+[20:15:30,136] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-4，当前用户的血量 = 40
+[20:15:30,552] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-5，当前用户的血量 = 30
+[20:15:30,982] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-4，当前用户的血量 = 20
+[20:15:31,431] [INFO] UserAttkCmdHandler.handle --> 当前线程 = nioEventLoopGroup-3-5，当前用户的血量 = 10
