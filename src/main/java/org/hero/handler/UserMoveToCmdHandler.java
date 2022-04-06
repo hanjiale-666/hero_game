@@ -3,6 +3,9 @@ package org.hero.handler;
 import com.google.protobuf.GeneratedMessageV3;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
+import org.hero.model.MoveState;
+import org.hero.model.User;
+import org.hero.model.UserManager;
 import org.hero.msg.GameMsgProtocol;
 import org.hero.story.Broadcaster;
 
@@ -22,19 +25,36 @@ public class UserMoveToCmdHandler implements ICmdHandler<GameMsgProtocol.UserMov
      */
     @Override
     public void handle(ChannelHandlerContext ctx, GameMsgProtocol.UserMoveToCmd msg) {
+        if (ctx == null || msg == null){
+            return;
+        }
         //从信道中获取用户id
         Integer userId = (Integer) ctx.channel().attr(AttributeKey.valueOf("userId")).get();
-
         if (userId == null) {
             return;
         }
+
+        //获取移动用户
+        User moveUser = UserManager.getUserById(userId);
+        //获取移动状态
+        MoveState moveState = moveUser.moveState;
+        //设置起始位置和开始移动时间
+        moveState.fromPosX = msg.getMoveFromPosX();
+        moveState.fromPosY = msg.getMoveFromPosY();
+        moveState.toPosX = msg.getMoveToPosX();
+        moveState.toPosY = msg.getMoveToPosY();
+        moveState.startTime = System.currentTimeMillis();
+
         //获取客户端移动信息指令
         GameMsgProtocol.UserMoveToCmd cmd = msg;
         //构造服务端返回对象
         GameMsgProtocol.UserMoveToResult.Builder resultBuilder = GameMsgProtocol.UserMoveToResult.newBuilder();
         resultBuilder.setMoveUserId(userId);
-        resultBuilder.setMoveToPosX(cmd.getMoveToPosX());
-        resultBuilder.setMoveToPosY(cmd.getMoveToPosY());
+        resultBuilder.setMoveFromPosX(moveState.fromPosX);
+        resultBuilder.setMoveFromPosY(moveState.fromPosY);
+        resultBuilder.setMoveToPosX(moveState.toPosX);
+        resultBuilder.setMoveToPosY(moveState.toPosY);
+        resultBuilder.setMoveStartTime(moveState.startTime);
 
         GameMsgProtocol.UserMoveToResult newResult = resultBuilder.build();
         //将当前用户的移动信息广播出去
