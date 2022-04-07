@@ -60,27 +60,11 @@ public class GameMsgHandler extends SimpleChannelInboundHandler<Object> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("收到客户端消息，msgClazz = " + msg.getClass().getName() + ",msg = " + msg);
-        //构建消息对象，并且进行广播群发
-        ICmdHandler<? extends GeneratedMessageV3> cmdHandler = CmdHandlerFactory.create(msg.getClass());
 
-        //由多态处理，将指令交给对应的处理器处理
-        if (cmdHandler != null){
-            cmdHandler.handle(ctx,cast(msg));
+        if (msg instanceof GeneratedMessageV3){
+            //通过主线程处理器处理消息(也就是单线程处理攻击这种指令)
+            MainThreadProcessor.getInstance().process(ctx,(GeneratedMessageV3) msg);
         }
-    }
-
-    /**
-     * 类型转换
-     * @param msg
-     * @param <T>
-     * @return
-     */
-    private static  <T extends GeneratedMessageV3>T cast(Object msg){
-        if (msg == null){
-            return null;
-        }
-        return (T)msg;
     }
 
 }

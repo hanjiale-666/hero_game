@@ -38,6 +38,8 @@ public class ServerMain {
         CmdHandlerFactory.init();
         //初始化消息识别器
         GameMsgRecognizer.init();
+        //sql回话初始化
+        MySqlSessionFactory.init();
         //netty代码
         //负责处理客户端连接，有连接建立channel
         EventLoopGroup bossGroup = new NioEventLoopGroup();
