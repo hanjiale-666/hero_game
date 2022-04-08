@@ -79,6 +79,17 @@ public final class MainThreadProcessor {
     }
 
     /**
+     * 处理消息
+     * @param runnable
+     */
+    public void process(Runnable runnable){
+        if (runnable == null){
+            return;
+        }
+        executor.submit(runnable);
+    }
+
+    /**
      * 类型转换
      * @param msg
      * @param <T>

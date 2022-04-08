@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @ClassName UserManager
@@ -17,7 +18,7 @@ public final class UserManager {
     /**
      * 存放当前服务器所有登录的用户
      */
-    private static final Map<Integer, User> _userMap = new HashMap<>();
+    private static final Map<Integer, User> _userMap = new ConcurrentHashMap<>();
 
     /**
      * 私有化，禁止被实例化
