@@ -5,6 +5,8 @@ import io.netty.util.AttributeKey;
 import lombok.extern.slf4j.Slf4j;
 import org.hero.model.User;
 import org.hero.model.UserManager;
+import org.hero.mq.MQProducer;
+import org.hero.mq.VictorMsg;
 import org.hero.msg.GameMsgProtocol;
 import org.hero.story.Broadcaster;
 import org.hero.story.GameMsgEncoder;
@@ -59,6 +61,16 @@ public class UserAttkCmdHandler implements ICmdHandler<GameMsgProtocol.UserAttkC
          */
         if (targetUser.currHp <= 0){
             broadcastDie(targetUserId);
+
+            if (!targetUser.died){
+                //设置死亡标记
+                targetUser.died = true;
+                //将战斗结果发送的消息队列
+                VictorMsg mqMsg = new VictorMsg();
+                mqMsg.winnerId = userId;
+                mqMsg.loserId = targetUserId;
+                MQProducer.sendMsg("Victor",mqMsg);
+            }
         }
     }
 

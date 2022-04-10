@@ -11,6 +11,8 @@ import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import org.hero.handler.CmdHandlerFactory;
+import org.hero.mq.MQProducer;
+import org.hero.util.RedisUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,6 +42,10 @@ public class ServerMain {
         GameMsgRecognizer.init();
         //sql回话初始化
         MySqlSessionFactory.init();
+        //redis初始化
+        RedisUtil.init();
+        //生产者初始化
+        MQProducer.init();
         //netty代码
         //负责处理客户端连接，有连接建立channel
         EventLoopGroup bossGroup = new NioEventLoopGroup();

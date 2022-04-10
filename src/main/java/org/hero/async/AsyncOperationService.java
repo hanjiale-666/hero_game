@@ -17,14 +17,14 @@ import java.util.concurrent.Executors;
 public final class AsyncOperationService {
 
     /**
+     * 单线程线程池数组,不可以为静态的(因为该单线程池数组要在构造方法中使用所以要放在构造单例对象的的语句前面)
+     */
+    private static final ExecutorService[] _esArray = new ExecutorService[8];
+    /**
      * 单例对象
      */
     private static final AsyncOperationService _instance = new AsyncOperationService();
 
-    /**
-     * 单线程线程池数组,不可以为静态的
-     */
-    private final ExecutorService[] _esArray = new ExecutorService[8];
     /**
      * 私有化默认构造器
      */

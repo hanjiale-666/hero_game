@@ -1,5 +1,6 @@
 package org.hero.login;
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 import org.hero.async.AsyncOperationService;
@@ -7,6 +8,9 @@ import org.hero.async.IAsyncOperation;
 import org.hero.login.db.IUserDao;
 import org.hero.login.db.UserEntity;
 import org.hero.story.MySqlSessionFactory;
+import org.hero.util.RedisUtil;
+import redis.clients.jedis.Jedis;
+import sun.rmi.runtime.Log;
 
 import java.util.function.Function;
 
@@ -61,6 +65,30 @@ public final class LoginService {
         AsyncOperationService.getInstance().process(asyncOp);
 
         log.info("用户登录完成，异步执行完毕");
+    }
+
+    /**
+     * 更新redis 中用户基本信息
+     * @param userEntity
+     */
+    private void updateUserBasicInfoInRedis(UserEntity userEntity){
+        if (userEntity == null){
+            return;
+        }
+        try(final Jedis redis = RedisUtil.getRedis()){
+            //获取用户id
+            final int userId = userEntity.userId;
+
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("userId",userId);
+            jsonObject.put("userName",userEntity.userName);
+            jsonObject.put("heroAvatar",userEntity.heroAvatar);
+
+            //更新 redis数据
+            redis.hset("User_" + userId,"BasicInfo",jsonObject.toJSONString());
+        } catch (Exception e){
+            log.error(e.getMessage(),e);
+        }
     }
 
     /**
@@ -134,6 +162,8 @@ public final class LoginService {
                     dao.insertInto(userEntity);
                 }
                 _userEntity = userEntity;
+                //更新redis中的用户基本信息
+                LoginService.getInstance().updateUserBasicInfoInRedis(userEntity);
             } catch (Exception e){
                 log.error(e.getMessage(),e);
             }
